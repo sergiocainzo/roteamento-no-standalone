@@ -6,16 +6,22 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
 import { PaginaComParametros } from './pagina-com-parametros/pagina-com-parametros';
 
 const routes: Routes = [
-  {path:'primeira-pagina', component:PrimeiraPagina},
-  {path:'segunda-pagina', component:SegundaPagina},
-  {path:'pagina-com-parametros/:id',component:PaginaComParametros},
-  {path:'', redirectTo: 'primeira-pagina', pathMatch: 'full'},
-  {path:'**',component:PaginaNaoEncontrada}
-
+  { path: 'primeira-pagina', component: PrimeiraPagina },
+  { path: 'segunda-pagina', component: SegundaPagina },
+  { path: 'pagina-com-parametros/:id', component: PaginaComParametros },
+  { path: '', redirectTo: 'primeira-pagina', pathMatch: 'full' },
+  {
+    path: 'lazy-loading',
+    loadChildren: () =>
+      import('./lazy-loading/lazy-loading-module').then(
+        (m) => m.LazyLoadingModule
+      ),
+  },
+  { path: '**', component: PaginaNaoEncontrada },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
