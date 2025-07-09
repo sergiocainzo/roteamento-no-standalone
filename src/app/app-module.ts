@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
 import { SegundaPagina } from './segunda-pagina/segunda-pagina';
 import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontrada';
 import { PaginaComParametros } from './pagina-com-parametros/pagina-com-parametros';
+import { PaginaProtegida } from './pagina-protegida/pagina-protegida';
+import { Login } from './login/login';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +19,14 @@ import { PaginaComParametros } from './pagina-com-parametros/pagina-com-parametr
     SegundaPagina,
     PaginaNaoEncontrada,
     PaginaComParametros,
+    PaginaProtegida,
+    Login,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
