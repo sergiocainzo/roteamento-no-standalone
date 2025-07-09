@@ -7,6 +7,7 @@ import { PrimeiraPagina } from './primeira-pagina/primeira-pagina';
 import { CommonModule } from '@angular/common';
 import { SegundaPagina } from './segunda-pagina/segunda-pagina';
 import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontrada';
+import { PaginaComParametros } from './pagina-com-parametros/pagina-com-parametros';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { PaginaNaoEncontrada } from './pagina-nao-encontrada/pagina-nao-encontra
     PrimeiraPagina,
     SegundaPagina,
     PaginaNaoEncontrada,
+    PaginaComParametros,
   ],
   imports: [
     BrowserModule,
